@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages - Name Input</title>
+    <link th:href="@{/css/home.css}" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <h1>Вітаю</h1>
+    <form id="nameForm" action="/saveSenderName" method="post">
+        <label for="senderName">Ваш нікнейм:</label>
+        <input type="text" id="senderName" name="senderName" required>
+        <button type="submit" class="submit-button">Відправити</button>
+    </form>
+</div>
+<script th:src="@{/js/home.js}"></script>
+</body>
+</html>
+

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages</title>
+    <link th:href="@{/css/messages.css}" rel="stylesheet">
+</head>
+<body>
+<div class="chat-container">
+    <h1>Повідомлення</h1>
+    <div class="back-button-container">
+        <a th:href="@{/}" class="back-button">Назад</a>
+    </div>
+    <br>
+    <div class="chat-window">
+        <div class="chat-messages">
+            <div th:each="message : ${messages}" th:with="senderName=${message.senderName}" class="message">
+                <span class="sender" th:text="${senderName}"></span>
+                <span class="timestamp" th:text="${#dates.format(message.sentAt, 'hh:mm a')}"></span>
+                <p th:text="${message.text}"></p>
+            </div>
+        </div>
+        <form id="messageForm" method="post" th:object="${newMessage}" class="message-form">
+            <input type="text" id="text" name="text" required placeholder="Type your message...">
+            <input type="hidden" id="senderName" name="senderName" th:value="${senderName}" />
+            <button type="submit">Відправити</button>
+        </form>
+        <form th:action="@{/messages}" method="get" class="filter-form">
+            <input type="text" id="filterName" name="filterName" placeholder="Filter by Sender Name...">
+            <button type="submit">Фільтр</button>
+        </form>
+    </div>
+</div>
+    <script th:src="@{/js/messages.js}"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.login-container h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 200px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.login-container button {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background-color: #45a049;
+}
+
+.login-container a {
+    color: #007bff;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.login-container a:hover {
+    text-decoration: underline;
+}
+
+.message {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid red; /* Красная рамка для ошибок */
+    color: red;
+    display: none; /* Скрываем по умолчанию */
+}
+
+.message.success {
+    border-color: green; /* Зелёная рамка для успешных сообщений */
+    color: green;
+}
