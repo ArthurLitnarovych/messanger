@@ -19,5 +19,5 @@ public class User {
     private String username;
 
     @Column(nullable = false)
-    private String password; // Consider using encryption for storing passwords
+    private String password;
 }

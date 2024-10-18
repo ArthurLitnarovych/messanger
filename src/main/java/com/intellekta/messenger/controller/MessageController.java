@@ -59,7 +59,7 @@ public class MessageController {
 
     @GetMapping("/clearSession")
     public String clearSession(SessionStatus sessionStatus) {
-        sessionStatus.setComplete(); // Очистка сессии
+        sessionStatus.setComplete();
         return "redirect:/";
     }
 }
