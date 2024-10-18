@@ -19,7 +19,7 @@ public class LoginController {
 
     @GetMapping("/login")
     public String showLoginPage() {
-        return "login"; // View for login form
+        return "login"; // View for login form test
     }
 
     @PostMapping("/login")
